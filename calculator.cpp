@@ -2,7 +2,6 @@
 calculate tip.
 */
 
-
 #include <iostream>
 #include <string>
 #include <stdexcept>
@@ -56,7 +55,7 @@ void purpose(){
 }
 
 int main(){
-	//Display banner only once
+	//Display banner only once, need a static variable for this.
 	static int purpose_check = 0;
 	
 	if (purpose_check == 0){
@@ -278,11 +277,11 @@ int main(){
 				}
 				cout<<"\nYour answer is: "<<multiplication(a,b)<<"\n";
 				break;
-			case 'E':
+			case 'E': //Cases for exit.
 			case 'e':
-				return 0;
+				return 0; //Exit the program.
 				break;
-			default:
+			default: //If the user is dumb.
 				cout << '\a';
 				cout<<"\nYou did not enter a valid character."
 				<<" Returning to the beginning.\n\n"
@@ -290,7 +289,6 @@ int main(){
 				<<" multiplication, / for"
 				<<" division, \nT for tip calculation, and E"
 				<<" to exit.\n\n";
-				//purpose_check = 1;
 				return main();
 				break;
 	}
